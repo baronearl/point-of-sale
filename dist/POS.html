@@ -1,0 +1,45 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'POS.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJQT1Muam5scCI+CiAgPGluZm9ybWF0aW9uPgogICAgPHRpdGxlPlBPUzwvdGl0bGU+CiAgICA8dmVuZG9yPkhwMTU8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4KICAgIDxvZmZsaW5lLWFsbG93ZWQvPgogIDwvaW5mb3JtYXRpb24+CiAgPHJlc291cmNlcz4KICAgIDxqMnNlIHZlcnNpb249IjEuNisiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgIDxqYXIgaHJlZj0iUE9TLmphciIgc2l6ZT0iMTEyMjkwNCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvY2hhcm0tZ2xpc3Rlbi00LjQuMS1qYXZhZG9jLmphciIgc2l6ZT0iMjgxNzA4OCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvY29tbW9ucy1jb2RlYy0xLjEwLmphciIgc2l6ZT0iMjg0MTg0IiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgICA8amFyIGhyZWY9ImxpYi9jb21tb25zLWxvZ2dpbmctMS4yLmphciIgc2l6ZT0iNjE4MjkiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2NvbnRyb2xzZngtOC40MC4xNS5qYXIiIHNpemU9IjE0MDI0OTAiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2h0dHBjbGllbnQtNC41LjYuamFyIiBzaXplPSI3NjcxNDAiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2h0dHBjb3JlLTQuNC4xMC5qYXIiIHNpemU9IjMyNjM1NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvbXlzcWwtY29ubmVjdG9yLWphdmEtOC4wLjE2LmphciIgc2l6ZT0iMjI5MzE0NCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvc3FsaXRlLWpkYmMtMy4yNy4yLjEuamFyIiBzaXplPSI2MDEyMTA3IiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgPC9yZXNvdXJjZXM+CiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9IkFwcGxpY2F0aW9uLk1haW4iICBuYW1lPSJQT1MiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+Cjwvam5scD4K'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedApplication() {
+        dtjava.embed(
+            {
+                id : 'Application',
+                url : 'POS.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '800',
+                height : '600',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJQT1Muam5scCI+CiAgPGluZm9ybWF0aW9uPgogICAgPHRpdGxlPlBPUzwvdGl0bGU+CiAgICA8dmVuZG9yPkhwMTU8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4KICAgIDxvZmZsaW5lLWFsbG93ZWQvPgogIDwvaW5mb3JtYXRpb24+CiAgPHJlc291cmNlcz4KICAgIDxqMnNlIHZlcnNpb249IjEuNisiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgIDxqYXIgaHJlZj0iUE9TLmphciIgc2l6ZT0iMTEyMjkwNCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvY2hhcm0tZ2xpc3Rlbi00LjQuMS1qYXZhZG9jLmphciIgc2l6ZT0iMjgxNzA4OCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvY29tbW9ucy1jb2RlYy0xLjEwLmphciIgc2l6ZT0iMjg0MTg0IiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgICA8amFyIGhyZWY9ImxpYi9jb21tb25zLWxvZ2dpbmctMS4yLmphciIgc2l6ZT0iNjE4MjkiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2NvbnRyb2xzZngtOC40MC4xNS5qYXIiIHNpemU9IjE0MDI0OTAiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2h0dHBjbGllbnQtNC41LjYuamFyIiBzaXplPSI3NjcxNDAiIGRvd25sb2FkPSJlYWdlciIgLz4KICAgIDxqYXIgaHJlZj0ibGliL2h0dHBjb3JlLTQuNC4xMC5qYXIiIHNpemU9IjMyNjM1NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvbXlzcWwtY29ubmVjdG9yLWphdmEtOC4wLjE2LmphciIgc2l6ZT0iMjI5MzE0NCIgZG93bmxvYWQ9ImVhZ2VyIiAvPgogICAgPGphciBocmVmPSJsaWIvc3FsaXRlLWpkYmMtMy4yNy4yLjEuamFyIiBzaXplPSI2MDEyMTA3IiBkb3dubG9hZD0iZWFnZXIiIC8+CiAgPC9yZXNvdXJjZXM+CiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9IkFwcGxpY2F0aW9uLk1haW4iICBuYW1lPSJQT1MiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+Cjwvam5scD4K'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedApplication);
+</script>
+
+</head><body>
+<h2>Test page for <b>POS</b></h2>
+  <b>Webstart:</b> <a href='POS.jnlp' onclick="return launchApplication('POS.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

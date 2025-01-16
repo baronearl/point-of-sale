@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="547.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Application.Settings">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="companyName" layoutX="133.0" layoutY="106.0" prefHeight="27.0" prefWidth="311.0" promptText="Company Name" />
+      <TextField fx:id="companyAddress" layoutX="133.0" layoutY="179.0" prefHeight="27.0" prefWidth="311.0" promptText="Company Address" />
+      <TextField fx:id="companyPhone" layoutX="133.0" layoutY="257.0" prefHeight="27.0" prefWidth="311.0" promptText="Company Phone" />
+      <Label layoutX="133.0" layoutY="69.0" prefHeight="17.0" prefWidth="311.0" text="Company Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="147.0" prefHeight="17.0" prefWidth="311.0" text="Company Address">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="222.0" prefHeight="17.0" prefWidth="311.0" text="Company Phone">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="228.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveSettings" prefHeight="33.0" prefWidth="132.0" text="Save">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="22.0" layoutY="18.0" prefHeight="27.0" prefWidth="486.0" text="Company Details">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

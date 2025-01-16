@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="POS.jnlp">
+  <information>
+    <title>POS</title>
+    <vendor>Hp15</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="POS.jar" size="1122904" download="eager" />
+    <jar href="lib/charm-glisten-4.4.1-javadoc.jar" size="2817088" download="eager" />
+    <jar href="lib/commons-codec-1.10.jar" size="284184" download="eager" />
+    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib/controlsfx-8.40.15.jar" size="1402490" download="eager" />
+    <jar href="lib/httpclient-4.5.6.jar" size="767140" download="eager" />
+    <jar href="lib/httpcore-4.4.10.jar" size="326356" download="eager" />
+    <jar href="lib/mysql-connector-java-8.0.16.jar" size="2293144" download="eager" />
+    <jar href="lib/sqlite-jdbc-3.27.2.1.jar" size="6012107" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="Application.Main"  name="POS" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="678.0" maxWidth="1020.0" minHeight="600.0" minWidth="1002.0" prefHeight="678.0" prefWidth="1002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.SuperAdminController">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+  
+      <MenuBar prefHeight="32.0" prefWidth="1001.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#signOutApp" text="Sign Out" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#setSettings" text="Settings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   
+  
+      <AnchorPane layoutY="37.0" prefHeight="530.0" prefWidth="489.0" BorderPane.alignment="CENTER">
+         <children>
+             <ListView layoutX="7.0" layoutY="8.0" prefHeight="227.0" prefWidth="281.0" />
+            <Label alignment="CENTER" layoutY="8.0" prefHeight="27.0" prefWidth="290.0" text="Add Products">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="43.0" prefHeight="2.0" prefWidth="265.0" />
+            <Label layoutX="14.0" layoutY="55.0" prefHeight="21.0" prefWidth="50.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addProductNameField" layoutX="77.0" layoutY="52.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="197.0" promptText="Product Name" />
+            <Label layoutX="14.0" layoutY="100.0" prefHeight="21.0" prefWidth="54.0" text="Price">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addProductPriceField" layoutX="76.0" layoutY="95.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="198.0" promptText="Product Price" />
+            <Label layoutX="14.0" layoutY="143.0" prefHeight="21.0" prefWidth="57.0" text="SKU">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addProductSKUField" layoutX="77.0" layoutY="138.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="197.0" promptText="Product SKU" />
+            <Button fx:id="addProductsBtn" layoutX="78.0" layoutY="184.0" mnemonicParsing="false" onAction="#addProducts" prefHeight="31.0" prefWidth="197.0" text="Save" />
+         <TabPane layoutY="245.0" prefHeight="315.0" prefWidth="489.0" tabClosingPolicy="UNAVAILABLE">
+           <tabs>
+             <Tab text="Create Users">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <Label layoutX="8.0" layoutY="4.0" prefHeight="31.0" prefWidth="479.0" text="Create User and Access Levels">
+                              <font>
+                                 <Font name="System Bold" size="17.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="firstNameCreate" layoutX="14.0" layoutY="43.0" prefHeight="31.0" prefWidth="212.0" promptText="First Name" />
+                           <TextField fx:id="lastNameCreate" layoutX="250.0" layoutY="43.0" prefHeight="31.0" prefWidth="227.0" promptText="Last Name" />
+                           <TextField fx:id="usernameCreate" layoutX="14.0" layoutY="86.0" prefHeight="31.0" prefWidth="212.0" promptText="Username" />
+                           <PasswordField fx:id="passwordCreate" layoutX="250.0" layoutY="86.0" prefHeight="31.0" prefWidth="227.0" promptText="Password" />
+                           <ComboBox fx:id="accessCreate" layoutX="14.0" layoutY="134.0" prefHeight="31.0" prefWidth="212.0" promptText="Access Level" />
+                           <ComboBox fx:id="genderCreate" layoutX="250.0" layoutY="134.0" prefHeight="31.0" prefWidth="226.0" promptText="Gender" />
+                           <Button fx:id="saveBtnCreate" layoutX="99.0" layoutY="184.0" mnemonicParsing="false" onAction="#createUser" prefHeight="31.0" prefWidth="127.0" text="Save" />
+                           <Button fx:id="resetBtnCreate" layoutX="250.0" layoutY="184.0" mnemonicParsing="false" onAction="#resetUsersField" prefHeight="31.0" prefWidth="133.0" text="Reset" />
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab fx:id="manageUsersTab" onSelectionChanged="#viewAllUsers" text="Manage Users">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView fx:id="usersTable" layoutX="6.0" layoutY="4.0" prefHeight="236.0" prefWidth="272.0">
+                             <columns>
+                               <TableColumn fx:id="user_id" prefWidth="75.0" text="User ID" />
+                               <TableColumn fx:id="username" prefWidth="111.0" text="Username" />
+                                 <TableColumn fx:id="role" prefWidth="84.0" text="Access" />
+                             </columns>
+                           </TableView>
+                           <TextField fx:id="fNameEdit" layoutX="288.0" layoutY="4.0" prefHeight="31.0" prefWidth="197.0" promptText="First Name" />
+                           <TextField fx:id="lNameEdit" layoutX="288.0" layoutY="44.0" prefHeight="31.0" prefWidth="197.0" promptText="Last Name" />
+                           <TextField fx:id="unameEdit" layoutX="288.0" layoutY="84.0" prefHeight="31.0" prefWidth="197.0" promptText="Username" />
+                           <PasswordField fx:id="passwordEdit" layoutX="288.0" layoutY="125.0" prefHeight="31.0" prefWidth="197.0" promptText="Password" />
+                           <ComboBox fx:id="roleEdit" layoutX="288.0" layoutY="164.0" prefHeight="31.0" prefWidth="197.0" promptText="Access Level" />
+                           <ComboBox fx:id="genderEdit" layoutX="289.0" layoutY="203.0" prefHeight="31.0" prefWidth="197.0" promptText="Gender" />
+                           <Button fx:id="updateUser" layoutX="288.0" layoutY="242.0" mnemonicParsing="false" onAction="#updateUserAction" prefHeight="31.0" prefWidth="197.0" text="Update" />
+                           <Button fx:id="editUser" layoutX="6.0" layoutY="243.0" mnemonicParsing="false" onAction="#editUserAction" prefHeight="31.0" prefWidth="83.0" text="Edit" />
+                           <Button fx:id="deleteUser" layoutX="183.0" layoutY="242.0" mnemonicParsing="false" onAction="#deleteUserAction" prefHeight="31.0" prefWidth="94.0" text="Delete" />
+                           <Button fx:id="refreshUser" layoutX="99.0" layoutY="243.0" mnemonicParsing="false" onAction="#refreshUsers" prefHeight="31.0" prefWidth="77.0" text="Refresh" />
+                        </children></AnchorPane>
+               </content>
+             </Tab>
+               <Tab fx:id="manageProductsTab" text="Products">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView fx:id="productsTable" layoutX="5.0" layoutY="4.0" prefHeight="234.0" prefWidth="290.0">
+                             <columns>
+                               <TableColumn fx:id="p_id" prefWidth="56.0" text="ID" />
+                               <TableColumn fx:id="p_name" prefWidth="94.0" text="Name" />
+                                 <TableColumn fx:id="p_sku" prefWidth="75.0" text="SKU" />
+                                 <TableColumn fx:id="p_price" prefWidth="64.0" text="Price" />
+                             </columns>
+                           </TableView>
+                           <TextField fx:id="productNameEdit" layoutX="302.0" layoutY="29.0" prefHeight="31.0" prefWidth="187.0" promptText="Product Name" />
+                           <TextField fx:id="productPriceEdit" layoutX="302.0" layoutY="90.0" prefHeight="31.0" prefWidth="187.0" promptText="Product Price" />
+                           <TextField fx:id="productSkuEdit" layoutX="302.0" layoutY="149.0" prefHeight="31.0" prefWidth="187.0" promptText="Product SKU" />
+                           <Button fx:id="productUpdateBtn" layoutX="302.0" layoutY="192.0" mnemonicParsing="false" onAction="#updateProductAction" prefHeight="31.0" prefWidth="187.0" text="Update" />
+                           <Button fx:id="editBtnProduct" layoutX="5.0" layoutY="241.0" mnemonicParsing="false" onAction="#editProductAction" prefHeight="31.0" prefWidth="83.0" text="Edit" />
+                           <Button fx:id="delBtnProduct" layoutX="200.0" layoutY="241.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="31.0" prefWidth="94.0" text="Delete" />
+                           <Label layoutX="302.0" layoutY="125.0" prefHeight="21.0" prefWidth="187.0" text="Product SKU">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="302.0" layoutY="66.0" prefHeight="21.0" prefWidth="187.0" text="Product Price">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="302.0" layoutY="5.0" prefHeight="21.0" prefWidth="187.0" text="Product Name">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Button fx:id="refreshProduct" layoutX="102.0" layoutY="241.0" mnemonicParsing="false" onAction="#refreshProducts" prefHeight="31.0" prefWidth="83.0" text="Refresh" />
+                        </children></AnchorPane>
+                 </content>
+               </Tab>
+               <Tab onSelectionChanged="#stockTab" text="Stock">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <Label layoutX="14.0" layoutY="4.0" prefHeight="31.0" prefWidth="290.0" text="Enter stock here">
+                              <font>
+                                 <Font name="System Bold" size="18.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="stockQuantity" layoutX="253.0" layoutY="73.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="230.0" promptText="Enter the Quantity in Numbers" />
+                           <Label layoutX="14.0" layoutY="48.0" prefHeight="21.0" prefWidth="229.0" text="Select Product">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                           <Label layoutX="259.0" layoutY="48.0" prefHeight="21.0" prefWidth="230.0" text="Quantity">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
+                           <Button fx:id="stockBtnSave" layoutX="253.0" layoutY="224.0" mnemonicParsing="false" onAction="#saveStock" prefHeight="31.0" prefWidth="230.0" text="Save" />
+                           <Label layoutX="254.0" layoutY="116.0" prefHeight="17.0" prefWidth="230.0" text="Date">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <DatePicker fx:id="stockDate" layoutX="254.0" layoutY="141.0" prefHeight="31.0" prefWidth="229.0" promptText="Date of entry" />
+                           <ListView fx:id="listStockProducts" layoutX="14.0" layoutY="104.0" prefHeight="151.0" prefWidth="230.0" />
+                           <TextField fx:id="itemFieldSearch" layoutX="14.0" layoutY="75.0" onAction="#searchItems" onKeyReleased="#searchItems" prefHeight="29.0" prefWidth="230.0" promptText="Search Selection" />
+                        </children></AnchorPane>
+                 </content>
+               </Tab>
+               <Tab onSelectionChanged="#debtorsTab" text="Debtors">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <Label layoutX="8.0" layoutY="3.0" prefHeight="35.0" prefWidth="81.0" text="Debtors">
+                              <font>
+                                 <Font name="System Bold" size="18.0" />
+                              </font>
+                           </Label>
+                           <TableView fx:id="debtorsTable" layoutX="8.0" layoutY="41.0" prefHeight="234.0" prefWidth="352.0">
+                             <columns>
+                               <TableColumn fx:id="debtorsId" prefWidth="59.0" text="S/N" />
+                               <TableColumn fx:id="debtorsName" prefWidth="141.0" text="Name" />
+                                 <TableColumn fx:id="debtorsAmount" prefWidth="83.0" text="Amount" />
+                                 <TableColumn fx:id="debtorsDate" prefWidth="75.0" text="Date" />
+                             </columns>
+                           </TableView>
+                           <Button fx:id="viewDebtors" layoutX="369.0" layoutY="154.0" mnemonicParsing="false" onAction="#debtorViewDetails" prefHeight="27.0" prefWidth="112.0" text="View" />
+                           <TextField fx:id="searchText" layoutX="213.0" layoutY="7.0" onKeyReleased="#handleSearchType" prefHeight="27.0" prefWidth="160.0" promptText="Search by name" />
+                           <Button fx:id="searchDebtors" layoutX="378.0" layoutY="6.0" mnemonicParsing="false" onAction="#searchDebtors" prefHeight="27.0" prefWidth="104.0" text="Search" />
+                           <Button fx:id="refreshDebtors" layoutX="370.0" layoutY="105.0" mnemonicParsing="false" onAction="#refreshDebtors" prefHeight="27.0" prefWidth="112.0" text="Refresh" />
+                           <DatePicker fx:id="searchDate" layoutX="97.0" layoutY="7.0" prefHeight="27.0" prefWidth="111.0" />
+                           <Button fx:id="clearSearchDebtor" layoutX="370.0" layoutY="55.0" mnemonicParsing="false" onAction="#clearDebtorFields" prefHeight="27.0" prefWidth="111.0" text="Clear Search" />
+                        </children>
+                     </AnchorPane>
+                 </content>
+               </Tab>
+           </tabs>
+         </TabPane>
+         <AnchorPane layoutX="290.0" layoutY="7.0" prefHeight="227.0" prefWidth="197.0">
+            <children>
+               <Label layoutX="4.0" layoutY="-5.0" prefHeight="31.0" prefWidth="190.0" text="Controls">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Button fx:id="checkStockBtn" layoutX="4.0" layoutY="30.0" mnemonicParsing="false" onAction="#checkStock" prefHeight="31.0" prefWidth="190.0" text="Check Stock">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </Button>
+               <Button fx:id="salesByMonthBtn" layoutX="4.0" layoutY="73.0" mnemonicParsing="false" onAction="#monthlySales" prefHeight="31.0" prefWidth="190.0" text="Sales by Month">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </Button>
+               <Button fx:id="salesByYearBtn" layoutX="4.0" layoutY="114.0" mnemonicParsing="false" onAction="#yearlySales" prefHeight="31.0" prefWidth="190.0" text="Sales by Year">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </Button>
+               <Button fx:id="customersBtn" layoutX="3.0" layoutY="155.0" mnemonicParsing="false" onAction="#viewAllCustomers" prefHeight="31.0" prefWidth="190.0" text="Customers">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </Button>
+               <Button fx:id="loginAsSales" layoutX="3.0" layoutY="196.0" mnemonicParsing="false" onAction="#loginAsSales" prefHeight="31.0" prefWidth="190.0" text="Login as Sales">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+         </children>
+      </AnchorPane>
+   <AnchorPane layoutX="491.0" layoutY="37.0" prefHeight="249.0" prefWidth="501.0">
+      <children>
+         <DatePicker fx:id="salesDatePicker" editable="false" layoutX="84.0" layoutY="-1.0" prefHeight="31.0" prefWidth="206.0" promptText="Search by date" />
+         <Button fx:id="searchSalesBtn" layoutX="296.0" layoutY="-1.0" mnemonicParsing="false" onAction="#searchSales" prefHeight="31.0" prefWidth="111.0" text="Search" />
+         <Label layoutX="-1.0" layoutY="-1.0" prefHeight="31.0" prefWidth="71.0" text="Sales">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font></Label>
+         <TableView fx:id="salesTable" layoutY="35.0" prefHeight="216.0" prefWidth="501.0">
+           <columns>
+             <TableColumn fx:id="salesId" prefWidth="75.0" text="ID" />
+             <TableColumn fx:id="salesCustomerName" prefWidth="202.0" text="Customer Name" />
+               <TableColumn fx:id="salesTotalPrice" prefWidth="125.0" text="Total Price (N)" />
+               <TableColumn fx:id="salesDate" prefWidth="98.0" text="Date" />
+           </columns>
+         </TableView>
+         <Button fx:id="clearSearch" layoutX="413.0" layoutY="-1.0" mnemonicParsing="false" onAction="#clearSearch" prefHeight="31.0" prefWidth="88.0" text="Clear" />
+      </children>
+   </AnchorPane>
+   <Button fx:id="viewDetailsBtn" layoutX="491.0" layoutY="293.0" mnemonicParsing="false" onAction="#salesViewDetails" prefHeight="29.0" prefWidth="136.0" text="View Details">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Button>
+   <Label fx:id="totalSalesLabel" layoutX="770.0" layoutY="373.0" prefHeight="29.0" prefWidth="71.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="totalExpenses" alignment="CENTER_RIGHT" layoutX="849.0" layoutY="483.0" prefHeight="26.0" prefWidth="143.0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Button fx:id="summarizeSales" layoutX="635.0" layoutY="293.0" mnemonicParsing="false" onAction="#summarySales" prefHeight="29.0" prefWidth="129.0" text="Summary">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Button>
+   <Label layoutX="491.0" layoutY="483.0" prefHeight="26.0" prefWidth="118.0" text="Expenses">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <TableView fx:id="expensesTable" layoutX="491.0" layoutY="511.0" prefHeight="131.0" prefWidth="501.0">
+     <columns>
+       <TableColumn fx:id="expensesId" prefWidth="49.0" text="ID" />
+       <TableColumn fx:id="expensesAmount" prefWidth="74.0" text="Amount" />
+         <TableColumn fx:id="expensesComment" prefWidth="187.0" text="Comment" />
+         <TableColumn fx:id="expensesSales" prefWidth="97.0" text="Sales" />
+         <TableColumn fx:id="expensesDate" prefWidth="93.0" text="Date" />
+     </columns>
+   </TableView>
+   <Label fx:id="totalExpensesLabel" alignment="CENTER" layoutX="645.0" layoutY="413.0" prefHeight="23.0" prefWidth="136.0" />
+   <Label fx:id="salesTotalAmount" alignment="CENTER_RIGHT" layoutX="795.0" layoutY="295.0" prefHeight="26.0" prefWidth="197.0">
+      <font>
+         <Font size="20.0" />
+      </font></Label>
+   <Label layoutX="489.0" layoutY="648.0" prefHeight="17.0" prefWidth="94.0" text="Net Total">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="netTotalPrice" alignment="CENTER_RIGHT" layoutX="770.0" layoutY="647.0" prefHeight="17.0" prefWidth="221.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <TableView fx:id="debtorSalesTable" layoutX="491.0" layoutY="353.0" prefHeight="131.0" prefWidth="501.0">
+     <columns>
+       <TableColumn fx:id="debtorSalesId" prefWidth="75.0" text="ID" />
+       <TableColumn fx:id="debtorSalesCustomerName" prefWidth="204.0" text="Customer Name" />
+         <TableColumn fx:id="debtorSalesTotalPrice" prefWidth="130.0" text="Total Price (N)" />
+         <TableColumn fx:id="debtorSalesDate" prefWidth="90.0" text="Date" />
+     </columns>
+   </TableView>
+   <Label layoutX="491.0" layoutY="325.0" prefHeight="17.0" prefWidth="190.0" text="Total Credits">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="totalCredits" alignment="CENTER_RIGHT" layoutX="842.0" layoutY="324.0" prefHeight="27.0" prefWidth="147.0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   
+   
+</AnchorPane>

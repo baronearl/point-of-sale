@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="341.0" prefWidth="421.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.PartPayment">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="debtorsName" editable="false" layoutX="92.0" layoutY="87.0" prefHeight="27.0" prefWidth="238.0" promptText="Debtor's Name" />
+      <TextField fx:id="debtorsAmount" layoutX="92.0" layoutY="148.0" onKeyReleased="#handleStringDigits" prefHeight="27.0" prefWidth="238.0" promptText="Debtor's Amount" />
+      <DatePicker fx:id="debtorsDate" layoutX="92.0" layoutY="209.0" prefHeight="27.0" prefWidth="238.0" promptText="Date" />
+      <Button layoutX="169.0" layoutY="256.0" mnemonicParsing="false" onAction="#updatePartPayment" onKeyReleased="#handleStringDigits" prefHeight="27.0" prefWidth="84.0" text="Update" />
+      <Label layoutX="92.0" layoutY="62.0" prefHeight="17.0" prefWidth="238.0" text="Debtor's Name" />
+      <Label layoutX="92.0" layoutY="122.0" prefHeight="17.0" prefWidth="238.0" text="Amount" />
+      <Label layoutX="92.0" layoutY="183.0" prefHeight="17.0" prefWidth="238.0" text="Date " />
+   </children>
+</AnchorPane>

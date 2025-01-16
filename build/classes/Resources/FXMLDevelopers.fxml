@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="368.0" prefWidth="784.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.DevelopersController">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="21.0" layoutY="62.0" prefHeight="19.0" prefWidth="137.0" text="IP Address">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="localIpAddress" layoutX="169.0" layoutY="58.0" prefHeight="27.0" prefWidth="203.0" promptText="IP Address" />
+      <Label layoutX="21.0" layoutY="114.0" prefHeight="17.0" prefWidth="148.0" text="DB Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="localDBName" layoutX="169.0" layoutY="110.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Name" />
+      <Label layoutX="21.0" layoutY="164.0" prefHeight="17.0" prefWidth="148.0" text="DB Userame">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="localDBUsername" layoutX="169.0" layoutY="160.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Username" />
+      <Label layoutX="21.0" layoutY="215.0" prefHeight="19.0" prefWidth="130.0" text="DB Password">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="localDBPassword" layoutX="169.0" layoutY="211.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Password" />
+      <Button layoutX="216.0" layoutY="283.0" mnemonicParsing="false" onAction="#saveLocalConfig" prefHeight="27.0" prefWidth="155.0" text="Save Config" />
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="34.0" prefWidth="366.0" text="Local Configuration  Settings">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text fill="#e10606" layoutX="14.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please edit with caution. Altering values from the input field will affect the flow of the program. This should be handled by a qualified developer." wrappingWidth="801.0000000000001" />
+      <Button layoutX="21.0" layoutY="283.0" mnemonicParsing="false" onAction="#checkLocalConnection" prefHeight="27.0" prefWidth="181.0" text="Check Connection" />
+      <AnchorPane layoutX="391.0" layoutY="2.0" prefHeight="309.0" prefWidth="415.0">
+         <children>
+            <Label layoutX="36.0" layoutY="7.0" prefHeight="34.0" prefWidth="366.0" text="Online Configuration  Settings">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="56.0" prefHeight="19.0" prefWidth="123.0" text="IP Address">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="onlineIpAddress" layoutX="187.0" layoutY="52.0" prefHeight="27.0" prefWidth="203.0" promptText="IP Address" />
+            <Label layoutX="38.0" layoutY="106.0" prefHeight="19.0" prefWidth="123.0" text="DB Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="153.0" prefHeight="19.0" prefWidth="123.0" text="DB Userame">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="203.0" prefHeight="19.0" prefWidth="130.0" text="DB Password">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="onlineDBName" layoutX="187.0" layoutY="102.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Name" />
+            <TextField fx:id="onlineDBUsername" layoutX="187.0" layoutY="149.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Username" />
+            <PasswordField fx:id="onlineDBPassword" layoutX="187.0" layoutY="199.0" prefHeight="27.0" prefWidth="203.0" promptText="Database Password" />
+            <Button layoutX="38.0" layoutY="282.0" mnemonicParsing="false" onAction="#checkOnlineConnection" prefHeight="27.0" prefWidth="181.0" text="Check Connection" />
+            <Button layoutX="235.0" layoutY="281.0" mnemonicParsing="false" onAction="#saveOnlineConfig" prefHeight="27.0" prefWidth="155.0" text="Save Config" />
+            <Separator layoutX="1.0" layoutY="-7.0" orientation="VERTICAL" prefHeight="309.0" prefWidth="5.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

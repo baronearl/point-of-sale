@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.ViewSalesItem">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="salesItemTable" layoutX="9.0" layoutY="65.0" prefHeight="439.0" prefWidth="563.0">
+        <columns>
+          <TableColumn fx:id="salesId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="salesItem" prefWidth="127.0" text="Item" />
+            <TableColumn fx:id="salesQuantity" prefWidth="93.0" text="Quantity" />
+            <TableColumn fx:id="salesPrice" prefWidth="102.0" text="Price" />
+            <TableColumn fx:id="salesTotal" prefWidth="92.0" text="Total" />
+            <TableColumn fx:id="salesCredit" prefWidth="73.0" text="Credit" />
+        </columns>
+      </TableView>
+      <Label fx:id="nameField" layoutX="9.0" layoutY="25.0" prefHeight="28.0" prefWidth="363.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateField" layoutX="480.0" layoutY="25.0" prefHeight="28.0" prefWidth="111.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="513.0" prefHeight="28.0" prefWidth="111.0" text="Total">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalField" alignment="CENTER_RIGHT" layoutX="379.0" layoutY="513.0" prefHeight="28.0" prefWidth="193.0" textFill="#1c9a42">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

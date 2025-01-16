@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="600.0" maxWidth="1020.0" minHeight="600.0" minWidth="1005.0" prefHeight="600.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.SalesDashboardController">
+   <children>
+      <Label fx:id="companyName" alignment="CENTER" layoutY="37.0" prefHeight="37.0" prefWidth="1005.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <MenuBar fx:id="dateMenu" layoutY="1.0" prefHeight="37.0" prefWidth="1005.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="menuSignout" mnemonicParsing="false" onAction="#signOutApp" text="Sign Out" />
+              <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Action">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#syncToServer" text="Sync" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutY="75.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="662.0">
+         <children>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="-2.0" prefHeight="37.0" prefWidth="588.0" text="Cart Items">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="1.0" layoutY="19.0" prefHeight="37.0" prefWidth="661.0" />
+            <TextField fx:id="customerName" layoutX="4.0" layoutY="80.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="227.0" promptText="Enter Customer's Name" />
+            <Label layoutX="4.0" layoutY="50.0" prefHeight="26.0" prefWidth="227.0" text="Customer Name">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="salesDate" editable="false" layoutX="446.0" layoutY="80.0" prefHeight="31.0" prefWidth="206.0" />
+            <Label layoutX="446.0" layoutY="50.0" prefHeight="26.0" prefWidth="206.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TableView fx:id="salesTable" editable="true" layoutX="7.0" layoutY="132.0" prefHeight="331.0" prefWidth="645.0">
+              <columns>
+                <TableColumn fx:id="id" maxWidth="1.7976931348623157E308" prefWidth="75.0" text="S/N" />
+                <TableColumn fx:id="quantity" prefWidth="100.0" text="Quantity" />
+                  <TableColumn fx:id="item" prefWidth="140.0" text="Items" />
+                  <TableColumn fx:id="unitPrice" prefWidth="134.0" text="Unit Price" />
+                  <TableColumn fx:id="total" prefWidth="127.0" text="Total" />
+                  <TableColumn fx:id="credit" prefWidth="68.0" text="Credit" />
+              </columns>
+            </TableView>
+            <AnchorPane layoutX="7.0" layoutY="441.0" prefHeight="37.0" prefWidth="645.0" />
+            <TextField fx:id="customerPhone" layoutX="238.0" layoutY="80.0" onKeyReleased="#handleStringDigits" prefHeight="31.0" prefWidth="200.0" promptText="Phone (Optional)" />
+            <Label layoutX="238.0" layoutY="50.0" prefHeight="26.0" prefWidth="200.0" text="Phone Number">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="netTotalValue" alignment="CENTER" layoutX="470.0" layoutY="475.0" prefHeight="36.0" prefWidth="176.0" text="N0.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="netTotalField" layoutX="387.0" layoutY="473.0" prefHeight="40.0" prefWidth="91.0" text="Net Total">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="clearBtn" layoutX="122.0" layoutY="479.0" mnemonicParsing="false" onAction="#clearCartItems" prefHeight="31.0" prefWidth="119.0" text="Clear All" />
+            <Button fx:id="saveProductBtn" layoutX="7.0" layoutY="479.0" mnemonicParsing="false" onAction="#saveProduct" prefHeight="31.0" prefWidth="91.0" text="Save" />
+            <Button fx:id="expensesBtn" layoutX="261.0" layoutY="479.0" mnemonicParsing="false" onAction="#addExpenditure" prefHeight="31.0" prefWidth="111.0" text="Expenses" />
+         </children>
+      </Pane>
+      <Separator layoutY="59.0" prefHeight="31.0" prefWidth="1005.0" />
+      <ListView layoutX="666.0" layoutY="74.0" prefHeight="515.0" prefWidth="330.0" />
+      <Label alignment="CENTER" layoutX="685.0" layoutY="75.0" prefHeight="45.0" prefWidth="300.0" text="Add items to Cart">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="serialNoLabel" layoutX="686.0" layoutY="128.0" prefHeight="37.0" prefWidth="77.0" text="Serial/No">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sNoField" disable="true" editable="false" layoutX="772.0" layoutY="125.0" prefHeight="37.0" prefWidth="206.0" promptText="Seria Number" />
+      <Label fx:id="qtyLabel" layoutX="687.0" layoutY="173.0" prefHeight="37.0" prefWidth="77.0" text="Quantity">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="qtyField" layoutX="772.0" layoutY="173.0" onKeyReleased="#calculateTotalPrice" prefHeight="37.0" prefWidth="206.0" promptText="Quantity" />
+      <Label fx:id="itemLabel" layoutX="687.0" layoutY="222.0" prefHeight="37.0" prefWidth="77.0" text="Item">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="unitPriceLabel" layoutX="686.0" layoutY="396.0" prefHeight="37.0" prefWidth="77.0" text="Unit Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="priceField" layoutX="772.0" layoutY="396.0" onKeyReleased="#calculateTotalPrice" prefHeight="37.0" prefWidth="206.0" promptText="Unit Price" />
+      <TextField fx:id="totalField" editable="false" layoutX="772.0" layoutY="447.0" prefHeight="37.0" prefWidth="206.0" promptText="Total" />
+      <Button fx:id="addCartBtn" layoutX="673.0" layoutY="550.0" mnemonicParsing="false" onAction="#addItemtoCart" prefHeight="31.0" prefWidth="85.0" text="Add" />
+      <Button fx:id="resetBtn" layoutX="767.0" layoutY="550.0" mnemonicParsing="false" onAction="#resetCartFields" prefHeight="31.0" prefWidth="111.0" text="Reset" />
+      <Button fx:id="deleteBtn" layoutX="887.0" layoutY="550.0" mnemonicParsing="false" onAction="#deleteItemFromCart" prefHeight="31.0" prefWidth="99.0" text="Delete" />
+      <Label fx:id="totalLabel" layoutX="686.0" layoutY="447.0" prefHeight="37.0" prefWidth="77.0" text="Total">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="creditLabel" layoutX="687.0" layoutY="497.0" prefHeight="37.0" prefWidth="77.0" text="Credit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="creditField" layoutX="772.0" layoutY="497.0" prefHeight="37.0" prefWidth="206.0" promptText="No" />
+      <Label fx:id="timeLabel" layoutX="1.0" layoutY="39.0" prefHeight="36.0" prefWidth="278.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ListView fx:id="itemListView" layoutX="772.0" layoutY="259.0" prefHeight="125.0" prefWidth="206.0" />
+      <TextField fx:id="itemFieldSearch" layoutX="772.0" layoutY="222.0" onKeyReleased="#searchItems" prefHeight="37.0" prefWidth="206.0" promptText="Search Item" />
+      <Label fx:id="loggedInAs" alignment="CENTER" layoutX="740.0" layoutY="48.0" prefHeight="19.0" prefWidth="256.0" textFill="#a90702">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="61.0" layoutX="1.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

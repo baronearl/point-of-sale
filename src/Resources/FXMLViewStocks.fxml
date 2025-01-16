@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="885.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.ViewStock">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <TitledPane collapsible="false" layoutX="14.0" layoutY="44.0" prefHeight="454.0" prefWidth="240.0" text="Stock Details">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <content>
+            <TableView fx:id="stockDetailsTable" prefHeight="280.0" prefWidth="238.0">
+              <columns>
+                <TableColumn fx:id="stockDetailsProduct" prefWidth="153.0" text="Products" />
+                <TableColumn fx:id="stockDetailsQty" prefWidth="85.0" text="Quantity" />
+              </columns>
+            </TableView>
+         </content>
+      </TitledPane>
+      <TitledPane collapsible="false" layoutX="271.0" layoutY="43.0" prefHeight="454.0" prefWidth="599.0" text="Stock History">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="597.0">
+               <children>
+                  <TableView fx:id="stockHistoryTable" layoutX="8.0" layoutY="7.0" prefHeight="409.0" prefWidth="581.0">
+                    <columns>
+                      <TableColumn fx:id="historyId" prefWidth="75.0" text="S/N" />
+                      <TableColumn fx:id="historyName" prefWidth="242.0" text="Product Name" />
+                        <TableColumn fx:id="historyQty" prefWidth="124.0" text="Quantity" />
+                        <TableColumn fx:id="historyDate" prefWidth="139.0" text="Date" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TitledPane>
+      <Label layoutX="14.0" layoutY="11.0" prefHeight="26.0" prefWidth="258.0" text="Stock Details/History">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="printStockBtn" layoutX="272.0" layoutY="11.0" mnemonicParsing="false" onAction="#printStock" prefHeight="27.0" prefWidth="130.0" text="Print Stock" />
+      <TextArea fx:id="printingArea" layoutX="483.0" layoutY="-1.0" prefHeight="43.0" prefWidth="200.0" visible="false" />
+   </children>
+</AnchorPane>

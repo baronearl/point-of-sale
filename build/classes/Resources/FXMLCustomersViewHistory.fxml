@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Application.FXMLCustomersViewHistory">
+    <stylesheets>
+        <URL value="@/Styles/styles.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="nameField" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="391.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateField" alignment="TOP_RIGHT" layoutX="439.0" layoutY="14.0" prefHeight="19.0" prefWidth="145.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="customersItemTable" layoutX="14.0" layoutY="44.0" prefHeight="357.0" prefWidth="571.0">
+        <columns>
+          <TableColumn fx:id="customersId" prefWidth="53.0" text="ID" />
+          <TableColumn fx:id="customersItem" prefWidth="128.0" text="Item" />
+            <TableColumn fx:id="customersQuantity" prefWidth="87.0" text="Quantity" />
+            <TableColumn fx:id="customersPrice" prefWidth="101.0" text="Price" />
+            <TableColumn fx:id="customersTotal" prefWidth="122.0" text="Total" />
+            <TableColumn fx:id="customersCredit" prefWidth="78.0" text="Credit" />
+        </columns>
+      </TableView>
+      <Label fx:id="totalField" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="409.0" prefHeight="17.0" prefWidth="167.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="292.0" layoutY="409.0" prefHeight="17.0" prefWidth="109.0" text="Total">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
